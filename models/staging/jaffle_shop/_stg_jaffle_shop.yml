@@ -1,14 +1,17 @@
 models:
   - name: stg_jaffle_shop__customers
-    description: one unique customer per row
+    description: Customers staging model with one row per customer, renamed from the raw `jaffle_shop.customers` source and prepared for downstream joins.
     columns:
       - name: customer_id
-        description: the primary key
+        description: Unique identifier for a customer, renamed from the raw source column `id`. this is the primary key.
         data_tests:
           - unique
           - not_null
       - name: first_name
+        description: Customer first name as provided in the raw source.
       - name: last_name
+        description: Customer last name as provided in the raw source.
+
   - name: stg_jaffle_shop__orders
     description: one order per row
     columns:
